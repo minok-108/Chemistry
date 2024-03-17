@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://km4add0qdghq"]
+
+[ext_resource type="Script" path="res://scripts/question.gd" id="1_w03dn"]
+[ext_resource type="FontFile" uid="uid://ccp77genks8cf" path="res://fonts/Radomir Tinkov - Gilroy-ExtraBold.otf" id="2_gi70r"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_lvh0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_48g4s"]
+font = ExtResource("2_gi70r")
+font_size = 20
+
+[node name="Question" type="Node2D"]
+script = ExtResource("1_w03dn")
+
+[node name="ButtonValue" type="OptionButton" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 2
+theme_override_icons/arrow = SubResource("MeshTexture_lvh0h")
+item_count = 4
+popup/item_0/text = "CH₃"
+popup/item_0/id = 0
+popup/item_1/text = "Cl"
+popup/item_1/id = 1
+popup/item_2/text = "OH"
+popup/item_2/id = 2
+popup/item_3/text = "O"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "?"
+label_settings = SubResource("LabelSettings_48g4s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="item_selected" from="ButtonValue" to="." method="_on_button_value_item_selected"]
+[connection signal="pressed" from="ButtonValue" to="." method="_on_button_value_pressed"]

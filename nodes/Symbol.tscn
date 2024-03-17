@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://de2rdnot6uptq"]
+
+[ext_resource type="FontFile" uid="uid://ccp77genks8cf" path="res://fonts/Radomir Tinkov - Gilroy-ExtraBold.otf" id="1_hvo8a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0hpd"]
+font = ExtResource("1_hvo8a")
+font_size = 20
+
+[node name="Sign" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "+"
+label_settings = SubResource("LabelSettings_y0hpd")
+horizontal_alignment = 1
+vertical_alignment = 1

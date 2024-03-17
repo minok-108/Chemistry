@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7c7vi36gmpkb"]
+
+[ext_resource type="Script" path="res://scripts/g.gd" id="1_6vl7f"]
+[ext_resource type="Script" path="res://scripts/alkane_alkene_alkyne.gd" id="2_exu1d"]
+[ext_resource type="Script" path="res://scripts/cycloalkane.gd" id="3_nkwnw"]
+[ext_resource type="Script" path="res://scripts/benzene.gd" id="4_dbqrt"]
+
+[node name="G" type="Node"]
+script = ExtResource("1_6vl7f")
+
+[node name="AlkaneAlkeneAlkyne" type="Node" parent="."]
+script = ExtResource("2_exu1d")
+
+[node name="Cycloalkane" type="Node" parent="."]
+script = ExtResource("3_nkwnw")
+
+[node name="Benzene" type="Node" parent="."]
+script = ExtResource("4_dbqrt")

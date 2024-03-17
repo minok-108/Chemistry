@@ -1,0 +1,422 @@
+[gd_scene load_steps=19 format=3 uid="uid://c40748mnj506h"]
+
+[ext_resource type="Script" path="res://scripts/app.gd" id="1_lfm2i"]
+[ext_resource type="FontFile" uid="uid://ccp77genks8cf" path="res://fonts/Radomir Tinkov - Gilroy-ExtraBold.otf" id="2_wa6cr"]
+[ext_resource type="Script" path="res://scripts/substance_1.gd" id="3_o37n2"]
+[ext_resource type="Script" path="res://scripts/substance_2.gd" id="4_aneb3"]
+[ext_resource type="Script" path="res://scripts/answer.gd" id="5_th7xv"]
+[ext_resource type="Script" path="res://scripts/panel.gd" id="7_tf8mi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqwyl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nsg4w"]
+font = ExtResource("2_wa6cr")
+
+[sub_resource type="Theme" id="Theme_wlaq5"]
+PopupMenu/fonts/font = ExtResource("2_wa6cr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xpelo"]
+font = ExtResource("2_wa6cr")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_gm3nd"]
+font = ExtResource("2_wa6cr")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0byd"]
+font = ExtResource("2_wa6cr")
+font_size = 14
+
+[sub_resource type="Theme" id="Theme_q88pg"]
+PopupMenu/fonts/font = ExtResource("2_wa6cr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj40n"]
+font = ExtResource("2_wa6cr")
+font_size = 14
+
+[sub_resource type="Animation" id="Animation_v6hpq"]
+resource_name = "hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(20, 0), Vector2(20, -120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["+"]
+}
+
+[sub_resource type="Animation" id="Animation_74sb7"]
+resource_name = "view"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(20, -120), Vector2(20, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["-"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mh6h"]
+_data = {
+"hide": SubResource("Animation_v6hpq"),
+"view": SubResource("Animation_74sb7")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_dlt6v"]
+font = ExtResource("2_wa6cr")
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="App" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lfm2i")
+
+[node name="Substance1" type="Node2D" parent="App"]
+script = ExtResource("3_o37n2")
+
+[node name="Substance2" type="Node2D" parent="App"]
+script = ExtResource("4_aneb3")
+
+[node name="Answer" type="Node2D" parent="App"]
+script = ExtResource("5_th7xv")
+
+[node name="Plus" type="Label" parent="App"]
+visible = false
+layout_mode = 0
+offset_left = 460.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 290.0
+text = "+"
+label_settings = SubResource("LabelSettings_fqwyl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equal" type="Label" parent="App"]
+visible = false
+layout_mode = 0
+offset_left = 460.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 290.0
+text = "->"
+label_settings = SubResource("LabelSettings_fqwyl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Panel" type="Control" parent="Top"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+script = ExtResource("7_tf8mi")
+
+[node name="Panel" type="Panel" parent="Top/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonLanguage" type="OptionButton" parent="Top/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_wa6cr")
+item_count = 2
+selected = 0
+popup/item_0/text = "en"
+popup/item_0/id = 0
+popup/item_1/text = "ru"
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Top/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -40.0
+offset_right = 252.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="ButtonShowQuestion" type="CheckButton" parent="Top/Panel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_wa6cr")
+button_pressed = true
+text = "$Show_questions"
+
+[node name="Interval" type="Control" parent="Top/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="LabelName" type="Label" parent="Top/Panel/HBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nsg4w")
+vertical_alignment = 1
+
+[node name="ButtonTypeSubstance1" type="OptionButton" parent="Top/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 30.0
+offset_right = 210.0
+offset_bottom = 70.0
+focus_mode = 0
+theme = SubResource("Theme_wlaq5")
+theme_override_fonts/font = ExtResource("2_wa6cr")
+theme_override_font_sizes/font_size = 16
+item_count = 6
+selected = 0
+popup/item_0/text = "$None"
+popup/item_0/id = 0
+popup/item_1/text = "$Alkane"
+popup/item_1/id = 1
+popup/item_2/text = "$Alkene"
+popup/item_2/id = 2
+popup/item_3/text = "$Alkyne"
+popup/item_3/id = 3
+popup/item_4/text = "$Cycloalkane"
+popup/item_4/id = 4
+popup/item_5/text = "$Benzene"
+popup/item_5/id = 5
+
+[node name="ButtonLength" type="OptionButton" parent="Top/Panel/ButtonTypeSubstance1"]
+visible = false
+layout_mode = 0
+offset_left = 210.0
+offset_right = 310.0
+offset_bottom = 40.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_wa6cr")
+item_count = 11
+selected = 0
+popup/item_0/text = "$None"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+popup/item_6/text = "6"
+popup/item_6/id = 6
+popup/item_7/text = "7"
+popup/item_7/id = 7
+popup/item_8/text = "8"
+popup/item_8/id = 8
+popup/item_9/text = "9"
+popup/item_9/id = 9
+popup/item_10/text = "10"
+popup/item_10/id = 10
+
+[node name="Label" type="Label" parent="Top/Panel/ButtonTypeSubstance1/ButtonLength"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 80.0
+text = "$Length"
+label_settings = SubResource("LabelSettings_xpelo")
+vertical_alignment = 1
+
+[node name="ButtonDoublePlace" type="OptionButton" parent="Top/Panel/ButtonTypeSubstance1"]
+visible = false
+layout_mode = 0
+offset_left = 320.0
+offset_right = 420.0
+offset_bottom = 40.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_wa6cr")
+item_count = 10
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+popup/item_6/text = "6"
+popup/item_6/id = 6
+popup/item_7/text = "7"
+popup/item_7/id = 7
+popup/item_8/text = "8"
+popup/item_8/id = 8
+popup/item_9/text = "9"
+popup/item_9/id = 9
+
+[node name="Label" type="Label" parent="Top/Panel/ButtonTypeSubstance1/ButtonDoublePlace"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 98.0
+text = "$Double_place"
+label_settings = SubResource("LabelSettings_gm3nd")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Top/Panel/ButtonTypeSubstance1"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 101.0
+text = "$Substance_1"
+label_settings = SubResource("LabelSettings_t0byd")
+vertical_alignment = 1
+
+[node name="ButtonTypeSubstance2" type="OptionButton" parent="Top/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 30.0
+offset_right = -10.0
+offset_bottom = 70.0
+grow_horizontal = 0
+focus_mode = 0
+theme = SubResource("Theme_q88pg")
+theme_override_fonts/font = ExtResource("2_wa6cr")
+item_count = 7
+selected = 0
+popup/item_0/text = "$None"
+popup/item_0/id = 0
+popup/item_1/text = "H₂"
+popup/item_1/id = 1
+popup/item_2/text = "O₂"
+popup/item_2/id = 2
+popup/item_3/text = "Cl₂"
+popup/item_3/id = 3
+popup/item_4/text = "Na"
+popup/item_4/id = 4
+popup/item_5/text = "HCl"
+popup/item_5/id = 5
+popup/item_6/text = "H₂O"
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="Top/Panel/ButtonTypeSubstance2"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 91.0
+text = "$Substance_2"
+label_settings = SubResource("LabelSettings_hj40n")
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Top/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(20, 20)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_wa6cr")
+text = "-"
+
+[node name="Animation" type="AnimationPlayer" parent="Top/Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_6mh6h")
+}
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -110.0
+offset_right = 128.0
+offset_bottom = -20.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_dlt6v")
+
+[connection signal="item_selected" from="Top/Panel/ButtonLanguage" to="App" method="_on_button_language_item_selected"]
+[connection signal="toggled" from="Top/Panel/HBoxContainer/ButtonShowQuestion" to="App" method="_on_button_show_question_toggled"]
+[connection signal="item_selected" from="Top/Panel/ButtonTypeSubstance1" to="App" method="_on_button_type_substance_1_item_selected"]
+[connection signal="item_selected" from="Top/Panel/ButtonTypeSubstance1/ButtonLength" to="App" method="_on_button_length_item_selected"]
+[connection signal="item_selected" from="Top/Panel/ButtonTypeSubstance1/ButtonDoublePlace" to="App" method="_on_button_double_place_item_selected"]
+[connection signal="item_selected" from="Top/Panel/ButtonTypeSubstance2" to="App" method="_on_button_type_substance_2_item_selected"]
+[connection signal="pressed" from="Top/Panel/Button" to="Top/Panel" method="_on_button_pressed"]

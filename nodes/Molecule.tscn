@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://k427qy10v60m"]
+
+[ext_resource type="FontFile" uid="uid://ccp77genks8cf" path="res://fonts/Radomir Tinkov - Gilroy-ExtraBold.otf" id="1_rt3bs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nym7x"]
+font = ExtResource("1_rt3bs")
+font_size = 20
+
+[node name="Molecule" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "CH₄"
+label_settings = SubResource("LabelSettings_nym7x")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,66 @@
+,en,ru
+$Meth,Meth,Мет
+$Eth,Eth,Эт
+$Prop,Prop,Проп
+$But,But,Бут
+$Pent,Pent,Пент
+$Hex,Hex,Гекс
+$Hept,Hept,Гепт
+$Oct,Oct,Окт
+$Non,Non,Нон
+$Dec,Dec,Дек
+$ane,ane,ан
+$ene,ene,ен
+$yne,yne,ин
+$anol,anol,анол
+$anon,anon,анон
+$anal,anal,аналь
+$Cyclo,Cyclo,Цикло
+$Benzene,Benzene,Бензол
+$Methyl,Methyl,Метил
+$Chlorine,Chlorine,Хлор
+$None,None,Пусто
+$Alkane,Alkane,Алкан
+$Alkene,Alkene,Алкен
+$Alkyne,Alkyne,Алкин
+$Cycloalkane,Cycloalkane,Циклоалкан
+$Benzene,Benzene,Бензол
+$Empty_set,Empty set,Пустое множество
+$Substance_1,Substance 1,Вещество 1
+$Substance_2,Substance 2,Вещество 2
+$Length,Length,Длина
+$Double_place,Double place,Двойное место
+$Name,Name,Имя
+$Show_questions,Show questions,Показывать вопросы
+,,
+,,
+$gase,gase,газ
+$absent,absent,отсутствует
+$pale_blue,pale blue,светло-синий
+$yes,yes,да
+$almost_not,almost not,почти нет
+$oily_liquid,oily liquid,маслянистая жидкость
+$pungent_gasoline,pungent gasoline,едкий запах бензина
+$waxy,waxy,воскообразный
+$slightly_yellowish,slightly yellowish,слегка желтоватый
+$faint_smell_of_gasoline,faint smell of gasoline,слабый запах бензина
+$faint_floral,faint floral,слабый цветочный
+$volatile_liquid,volatile liquid,летучая жидкость
+$solid,solid,твердый
+$bright_smoky,bright smoky,яркое коптящее
+$liquid,liquid,жидкость
+$burning_alcoholic,burning alcoholic,жгучий запах спирта
+$green,green,зеленый
+$blue,blue,синий
+$no,no,нет
+$yellowish,yellowish,желтоватый
+$fruity,fruity,фруктовый
+$strong_smell_of_nail_polish,strong smell of nail polish,сильный запах лака для ногтей
+$peculiar_pungent,peculiar pungent,едкий специфический
+,,
+$consistence,consistence,консистенция
+$color,color,цвет
+$odor,odor,запах
+$flame,flame,пламя
+$organic_solubility,organic solubility,растворимость в органических растворителях
+$water_solubility,water solubility,растворимость в воде
